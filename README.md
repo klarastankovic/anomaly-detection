@@ -6,10 +6,10 @@ Rad uspoređuje dva pristupa detekciji anomalija, algoritam izolacijskih stabala
 
 ## Metodologija u kratkim crtama
  
-- Podaci se dijele kronološki (70:30), ne nasumično, kako bi se simuliralo stvarno vrijeme i izbjeglo curenje informacija iz budućnosti u prošlost.
-- RobustScaler se prilagođava isključivo na trening skupu.
-- Isolation Forest trenira se nenadzirano na cijelom trening skupu; autoenkoder se trenira polunadzirano, isključivo na legitimnim transakcijama.
-- Oba se modela evaluiraju prema preciznosti, odzivu, F1-mjeri, ROC-AUC i PR-AUC vrijednosti, uz poseban naglasak na PR-AUC zbog izrazite neuravnoteženosti skupa podataka.
+- Podaci se dijele kronološki na podskup za učenje, validaciju i testiranje (63:7:30), ne nasumično, kako bi se simuliralo stvarno vrijeme i izbjeglo curenje informacija iz budućnosti u prošlost.
+- RobustScaler se prilagođava isključivo na skupu za učenje.
+- Isolation Forest trenira se nenadzirano na cijelom skupu za učenje; autoenkoder se trenira polunadzirano, isključivo na legitimnim transakcijama.
+- Oba se modela evaluiraju na validacijskom skupu prema preciznosti, odzivu, F1-mjeri, ROC-AUC i PR-AUC vrijednosti, uz poseban naglasak na PR-AUC zbog izrazite neuravnoteženosti skupa podataka.
 - Na temelju usporedbe u model_comparison.ipynb, autoenkoder je odabran kao konačni model za prototip.ipynb.
 
 Detaljno obrazloženje svake metodološke odluke nalazi se u poglavlju 4. samog rada.
