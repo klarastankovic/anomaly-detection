@@ -20,11 +20,12 @@ Sve bilježnice pisane su za Google Colab i preuzimaju skup podataka izravno s K
  
 Redoslijed pokretanja:
  
-1. isolation-forest/isolation_forest.ipynb i autoencoder/autoencoder_keras_tensor.ipynb - svaka se može pokrenuti neovisno, od početka do kraja (Runtime → Run all). Svaka sprema svoj istrenirani model na kraju.
-2. model_comparison.ipynb - zahtijeva ručno učitavanje modela istreniranih u koraku 1 (isolation_forest_model.pkl, amount_scaler_if.pkl, time_scaler_if.pkl, autoencoder_model.keras), budući da Colab runtime ne dijeli datoteke između zasebnih bilježnica.
-3. prototip.ipynb - zahtijeva samo autoencoder_model.keras iz koraka 1.
+1. isolation-forest/isolation_forest.ipynb može se pokrenuti neovisno (Runtime → Run all). Sprema svoj istrenirani model na kraju.
+2. autoencoder/autoencoder_keras_tensor.ipynb zahtijeva ručno učitavanje amount_scaler_if.pkl i time_scaler_if.pkl iz isolation_forest.ipynb. Sprema svoj istrenirani model na kraju.
+3. model_comparison.ipynb zahtijeva ručno učitavanje modela istreniranih u koraku 1 i 2 (isolation_forest_model.pkl, amount_scaler_if.pkl, time_scaler_if.pkl, autoencoder_model.keras, autoencoder_threshold.pkl), budući da Colab runtime ne dijeli datoteke između zasebnih bilježnica.
+4. prototip.ipynb zahtijeva ručno učitavanje amount_scaler_if.pkl, time_scaler_if.pkl, autoencoder_model.keras i autoencoder_threshold.pkl iz koraka 2.
 
-autoencoder_pytorch.ipynb je samostalna, dodatna implementacija iste arhitekture; ne zahtijeva niti se koristi u koracima 2–3.
+autoencoder_pytorch.ipynb je samostalna, dodatna implementacija iste arhitekture; zahtijeva amount_scaler_if.pkl i time_scaler_if.pkl, ali ne koristi se u koracima 2–3.
  
 ## Korištene tehnologije
  
